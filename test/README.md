@@ -1,9 +1,9 @@
-System testing for [modbus library](https://github.com/goburrow/modbus)
+System testing for [modbus library](https://github.com/annlumia/go-modbus)
 
-Modbus simulator
-----------------
-*   [Diagslave](http://www.modbusdriver.com/diagslave.html)
-*   [socat](http://www.dest-unreach.org/socat/)
+## Modbus simulator
+
+- [Diagslave](http://www.modbusdriver.com/diagslave.html)
+- [socat](http://www.dest-unreach.org/socat/)
 
 ```bash
 # TCP

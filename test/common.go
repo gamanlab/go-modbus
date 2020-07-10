@@ -10,6 +10,7 @@ import (
 	"testing"
 )
 
+// AssertEquals ...
 func AssertEquals(t *testing.T, expected, actual interface{}) {
 	_, file, line, ok := runtime.Caller(1)
 	if !ok {

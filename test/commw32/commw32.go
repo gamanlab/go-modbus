@@ -9,7 +9,6 @@ package main
 
 // #include <windows.h>
 import "C"
-
 import (
 	"bufio"
 	"fmt"
@@ -22,8 +21,8 @@ const port = "COM4"
 func main() {
 	handle, err := syscall.CreateFile(syscall.StringToUTF16Ptr(port),
 		syscall.GENERIC_READ|syscall.GENERIC_WRITE,
-		0,   // mode
-		nil, // security
+		0,                     // mode
+		nil,                   // security
 		syscall.OPEN_EXISTING, // no creating new
 		0,
 		0)

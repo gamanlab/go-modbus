@@ -1,4 +1,4 @@
-// Copyright 2014 Quoc-Viet Nguyen. All rights reserved.
+// Copyright 2018 xft. All rights reserved.
 // This software may be modified and distributed under the terms
 // of the BSD license.  See the LICENSE file for details.
 
@@ -14,19 +14,21 @@ import (
 )
 
 const (
-	tcpDevice = "localhost:5020"
+	asciiOverTCPDevice = "localhost:502"
 )
 
-func TestTCPClient(t *testing.T) {
-	client := modbus.TCPClient(tcpDevice)
-	ClientTestAll(t, client)
+func TestASCIIOverTCPClient(t *testing.T) {
+	// Diagslave does not support broadcast id.
+	handler := modbus.NewASCIIOverTCPClientHandler(asciiOverTCPDevice)
+	handler.SlaveID = 17
+	ClientTestAll(t, modbus.NewClient(handler))
 }
 
-func TestTCPClientAdvancedUsage(t *testing.T) {
-	handler := modbus.NewTCPClientHandler(tcpDevice)
+func TestASCIIOverTCPClientAdvancedUsage(t *testing.T) {
+	handler := modbus.NewASCIIOverTCPClientHandler(asciiOverTCPDevice)
 	handler.Timeout = 5 * time.Second
 	handler.SlaveID = 1
-	handler.Logger = log.New(os.Stdout, "tcp: ", log.LstdFlags)
+	handler.Logger = log.New(os.Stdout, "ascii over tcp: ", log.LstdFlags)
 	handler.Connect()
 	defer handler.Close()
 

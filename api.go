@@ -4,6 +4,7 @@
 
 package modbus
 
+// Client ...
 type Client interface {
 	// Bit access
 

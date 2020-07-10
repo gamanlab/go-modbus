@@ -11,8 +11,8 @@ import (
 	"fmt"
 )
 
+// Bit access
 const (
-	// Bit access
 	FuncCodeReadDiscreteInputs = 2
 	FuncCodeReadCoils          = 1
 	FuncCodeWriteSingleCoil    = 5
@@ -28,6 +28,7 @@ const (
 	FuncCodeReadFIFOQueue              = 24
 )
 
+// ExceptionCode
 const (
 	ExceptionCodeIllegalFunction                    = 1
 	ExceptionCodeIllegalDataAddress                 = 2
@@ -40,14 +41,14 @@ const (
 	ExceptionCodeGatewayTargetDeviceFailedToRespond = 11
 )
 
-// ModbusError implements error interface.
-type ModbusError struct {
+// MbError implements error interface.
+type MbError struct {
 	FunctionCode  byte
 	ExceptionCode byte
 }
 
 // Error converts known modbus exception code to error message.
-func (e *ModbusError) Error() string {
+func (e *MbError) Error() string {
 	var name string
 	switch e.ExceptionCode {
 	case ExceptionCodeIllegalFunction:

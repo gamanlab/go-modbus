@@ -7,9 +7,10 @@ package test
 import (
 	"testing"
 
-	"github.com/goburrow/modbus"
+	"github.com/annlumia/go-modbus"
 )
 
+// ClientTestReadCoils ...
 func ClientTestReadCoils(t *testing.T, client modbus.Client) {
 	// Read discrete outputs 20-38:
 	address := uint16(0x0013)
@@ -21,6 +22,7 @@ func ClientTestReadCoils(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 3, len(results))
 }
 
+// ClientTestReadDiscreteInputs ...
 func ClientTestReadDiscreteInputs(t *testing.T, client modbus.Client) {
 	// Read discrete inputs 197-218
 	address := uint16(0x00C4)
@@ -32,6 +34,7 @@ func ClientTestReadDiscreteInputs(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 3, len(results))
 }
 
+// ClientTestReadHoldingRegisters ...
 func ClientTestReadHoldingRegisters(t *testing.T, client modbus.Client) {
 	// Read registers 108-110
 	address := uint16(0x006B)
@@ -43,6 +46,7 @@ func ClientTestReadHoldingRegisters(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 6, len(results))
 }
 
+// ClientTestReadInputRegisters ...
 func ClientTestReadInputRegisters(t *testing.T, client modbus.Client) {
 	// Read input register 9
 	address := uint16(0x0008)
@@ -54,6 +58,7 @@ func ClientTestReadInputRegisters(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 2, len(results))
 }
 
+// ClientTestWriteSingleCoil ...
 func ClientTestWriteSingleCoil(t *testing.T, client modbus.Client) {
 	// Write coil 173 ON
 	address := uint16(0x00AC)
@@ -65,6 +70,7 @@ func ClientTestWriteSingleCoil(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 2, len(results))
 }
 
+// ClientTestWriteSingleRegister ...
 func ClientTestWriteSingleRegister(t *testing.T, client modbus.Client) {
 	// Write register 2 to 00 03 hex
 	address := uint16(0x0001)
@@ -76,6 +82,7 @@ func ClientTestWriteSingleRegister(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 2, len(results))
 }
 
+// ClientTestWriteMultipleCoils ...
 func ClientTestWriteMultipleCoils(t *testing.T, client modbus.Client) {
 	// Write a series of 10 coils starting at coil 20
 	address := uint16(0x0013)
@@ -88,6 +95,7 @@ func ClientTestWriteMultipleCoils(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 2, len(results))
 }
 
+// ClientTestWriteMultipleRegisters ...
 func ClientTestWriteMultipleRegisters(t *testing.T, client modbus.Client) {
 	// Write two registers starting at 2 to 00 0A and 01 02 hex
 	address := uint16(0x0001)
@@ -100,6 +108,7 @@ func ClientTestWriteMultipleRegisters(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 2, len(results))
 }
 
+// ClientTestMaskWriteRegisters ...
 func ClientTestMaskWriteRegisters(t *testing.T, client modbus.Client) {
 	// Mask write to register 5
 	address := uint16(0x0004)
@@ -112,6 +121,7 @@ func ClientTestMaskWriteRegisters(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 4, len(results))
 }
 
+// ClientTestReadWriteMultipleRegisters ...
 func ClientTestReadWriteMultipleRegisters(t *testing.T, client modbus.Client) {
 	// read six registers starting at register 4, and to write three registers starting at register 15
 	address := uint16(0x0003)
@@ -126,6 +136,7 @@ func ClientTestReadWriteMultipleRegisters(t *testing.T, client modbus.Client) {
 	AssertEquals(t, 12, len(results))
 }
 
+// ClientTestReadFIFOQueue ...
 func ClientTestReadFIFOQueue(t *testing.T, client modbus.Client) {
 	// Read queue starting at the pointer register 1246
 	address := uint16(0x04DE)
@@ -138,6 +149,7 @@ func ClientTestReadFIFOQueue(t *testing.T, client modbus.Client) {
 	}
 }
 
+// ClientTestAll ...
 func ClientTestAll(t *testing.T, client modbus.Client) {
 	ClientTestReadCoils(t, client)
 	ClientTestReadDiscreteInputs(t, client)

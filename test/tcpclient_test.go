@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	tcpDevice = "localhost:5020"
+	tcpDevice = "localhost:502"
 )
 
 func TestTCPClient(t *testing.T) {

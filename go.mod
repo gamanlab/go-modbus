@@ -1,4 +1,4 @@
-module github.com/annlumia/go-modbus
+module github.com/gamanlab/go-modbus
 
 go 1.14
 

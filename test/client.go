@@ -7,7 +7,7 @@ package test
 import (
 	"testing"
 
-	"github.com/annlumia/go-modbus"
+	"github.com/gamanlab/go-modbus"
 )
 
 // ClientTestReadCoils ...

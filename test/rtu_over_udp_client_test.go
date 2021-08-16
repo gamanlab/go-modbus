@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/annlumia/go-modbus"
+	"github.com/gamanlab/go-modbus"
 )
 
 const (

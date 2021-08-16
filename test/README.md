@@ -1,4 +1,4 @@
-System testing for [modbus library](https://github.com/annlumia/go-modbus)
+System testing for [modbus library](https://github.com/gamanlab/go-modbus)
 
 ## Modbus simulator
 

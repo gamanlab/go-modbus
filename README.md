@@ -1,4 +1,4 @@
-# go modbus [![Build Status](https://travis-ci.org/annlumia/modbus.svg?branch=master)](https://travis-ci.org/annlumia/modbus) [![GoDoc](https://godoc.org/github.com/annlumia/go-modbus?status.svg)](https://godoc.org/github.com/annlumia/go-modbus)
+# go modbus [![Build Status](https://travis-ci.org/gamanlab/modbus.svg?branch=master)](https://travis-ci.org/gamanlab/modbus) [![GoDoc](https://godoc.org/github.com/gamanlab/go-modbus?status.svg)](https://godoc.org/github.com/gamanlab/go-modbus)
 
 Fault-tolerant, fail-fast implementation of Modbus protocol in Go.
 
